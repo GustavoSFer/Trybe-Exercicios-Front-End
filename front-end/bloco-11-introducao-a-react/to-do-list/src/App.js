@@ -11,7 +11,7 @@ const arrayCompromisso = ['HTML', 'CSS', 'JavaScript', 'Angular', 'React']
 function App() {
   return (
     <div className="App">
-     <p>{Task('Gustavo')}</p>
+     {arrayCompromisso.map((item) => <p>{Task(item)}</p>)}
     </div>
   );
 }
