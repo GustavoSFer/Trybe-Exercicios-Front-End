@@ -1,11 +1,13 @@
 import './App.css';
 import React from 'react';
+import Inputs from './Components/Inputs'
 
 class App extends React.Component {
   constructor() {
     super()
     this.state = {
       name: '',
+      email: '',
     }
     this.handleSetState = this.handleSetState.bind(this);
   }
@@ -23,10 +25,11 @@ class App extends React.Component {
       <div className="App">
         <fieldset>
           <legend>Dados pessoais:</legend>
-          <label htmlFor="name">
-            Name:
-            <input type="text" id="name" name="name" onChange={this.handleSetState} value={this.state.name} />
-          </label>
+          <Inputs type="text" name="name" onChange={this.handleSetState} value={this.state.name}>Nome: </Inputs>
+
+          <Inputs type="email" name="email" onChange={this.handleSetState} value={this.state.email}>Email: </Inputs>
+
+
         </fieldset>
       
       </div>
