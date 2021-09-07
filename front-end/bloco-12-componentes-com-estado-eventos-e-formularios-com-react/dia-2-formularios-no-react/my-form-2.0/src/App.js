@@ -1,25 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      name: '',
+    }
+    this.handleSetState = this.handleSetState.bind(this);
+  }
+
+  handleSetState({ target }) {
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    this.setState({
+      [name]: value.toUpperCase(),
+    })
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <fieldset>
+          <legend>Dados pessoais:</legend>
+          <label htmlFor="name">
+            Name:
+            <input type="text" id="name" name="name" onChange={this.handleSetState} value={this.state.name} />
+          </label>
+        </fieldset>
+      
+      </div>
+    );
+  }
 }
 
 export default App;
