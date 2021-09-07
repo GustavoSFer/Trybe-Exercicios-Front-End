@@ -1,6 +1,8 @@
 import './App.css';
 import React from 'react';
 import Inputs from './Components/Inputs'
+import TextArea from './Components/TextArea';
+import { importDefaultSpecifier } from '@babel/types';
 
 class App extends React.Component {
   constructor() {
@@ -30,6 +32,7 @@ class App extends React.Component {
       <div className="App">
         <fieldset>
           <legend>Dados pessoais:</legend>
+
           <Inputs type="text" name="name" onChange={this.handleSetState} value={this.state.name}>Nome: </Inputs>
 
           <Inputs type="email" name="email" onChange={this.handleSetState} value={this.state.email}>Email: </Inputs>
@@ -45,7 +48,22 @@ class App extends React.Component {
           <Inputs type="text" name="tipo" onChange={this.handleSetState} value={this.state.tipo}>Tipo: </Inputs>
 
         </fieldset>
-      
+        <fieldset>
+          <legend>Dados do seu último emprego::</legend>
+
+          <TextArea type="text" name="resuCurr" onChange={this.handleSetState} value={this.state.resuCurr}>
+            Resumo do currículo
+          </TextArea>
+          <Inputs type="text" name="cargo" onChange={this.handleSetState} value={this.state.cargo}>
+            Cargo
+          </Inputs>
+
+          <TextArea type="text" name="descCargo" onChange={this.handleSetState} value={this.state.descCargo}>
+            Descrção do Cargo:
+          </TextArea>
+
+
+        </fieldset>
       </div>
     );
   }
