@@ -40,10 +40,13 @@
 
       const store = Redux.createStore(reducer);
 
-      const reducer = (state = ESTADO_INICIAL) => {
-        return state;
+      const reducer = (state = ESTADO_INICIAL, action) => {
+        switch (action.type) {
+          default: 
+          state;
+        }
       };
-      
+
     </script>
   </body>
 </html>
