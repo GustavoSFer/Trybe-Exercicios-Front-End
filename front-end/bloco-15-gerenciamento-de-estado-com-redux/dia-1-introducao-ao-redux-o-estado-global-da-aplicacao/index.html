@@ -57,6 +57,16 @@
         }
       };
 
+const previous = document.getElementById('previous');
+previous.addEventListener('click', () => {
+ store.dispatch({ type: 'PREVIOUS_COLOR' });
+});
+
+const next = document.getElementById('next')
+.addEventListener('click', () => {
+  store.dispatch({ type: 'NEXT_COLOR' });
+});
+
     </script>
   </body>
 </html>
