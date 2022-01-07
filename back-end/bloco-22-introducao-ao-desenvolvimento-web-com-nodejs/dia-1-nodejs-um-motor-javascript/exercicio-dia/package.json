@@ -4,6 +4,7 @@
   "description": "Exercicio do dia 22.1",
   "main": "index.js",
   "scripts": {
+    "velocidade": "node velocidade.js",
     "imc": "node imc.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
