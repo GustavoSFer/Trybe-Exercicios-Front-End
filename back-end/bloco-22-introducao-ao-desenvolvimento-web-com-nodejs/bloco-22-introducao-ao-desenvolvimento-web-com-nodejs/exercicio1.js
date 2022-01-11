@@ -13,6 +13,10 @@ const funcNum = (a, b, c) => {
   })
 }
 
+const numeroAleatorioA = Math.floor(Math.random() * 100 + 1);
+const numeroAleatorioB = Math.floor(Math.random() * 10 + 1);
+const numeroAleatorioC = Math.floor(Math.random() * 100 + 1);
+
 // funcNum(10, 10, 10)
 //   .then((resposta) => console.log(resposta))
 //   .catch((error) => console.log(error));
@@ -29,15 +33,19 @@ const funcNum = (a, b, c) => {
 //   .then((resposta) => console.log(resposta))
 //   .catch((e) => console.log(e));
 
-async function main() {
-  
-  const numeroAleatorioA = Math.floor(Math.random() * 100 + 1);
-  const numeroAleatorioB = Math.floor(Math.random() * 10 + 1);
-  const numeroAleatorioC = Math.floor(Math.random() * 100 + 1);
-  
-  const resposta = await funcNum(numeroAleatorioA, numeroAleatorioB, numeroAleatorioC)
-    .catch((e) => console.log(e));
-  
-}
+// async function main() {
+//   const resposta = await funcNum(numeroAleatorioA, numeroAleatorioB, numeroAleatorioC)
+//     .catch((e) => console.log(e));
+// }
 
-main();
+// main();
+
+async function main() {
+  try {
+    const resposta = await funcNum(numeroAleatorioA, numeroAleatorioB, numeroAleatorioC)
+    console.log(resposta);
+  } catch(e) {
+    console.log(e);
+  }
+
+}
