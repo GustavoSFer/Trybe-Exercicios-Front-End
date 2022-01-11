@@ -13,14 +13,22 @@ const funcNum = (a, b, c) => {
   })
 }
 
-funcNum(10, 10, 10)
-  .then((resposta) => console.log(resposta))
-  .catch((error) => console.log(error));
+// funcNum(10, 10, 10)
+//   .then((resposta) => console.log(resposta))
+//   .catch((error) => console.log(error));
 
-funcNum(10, 3, 'a')
-  .then((resposta) => console.log(resposta))
-  .catch((err) => console.log(err));
+// funcNum(10, 3, 'a')
+//   .then((resposta) => console.log(resposta))
+//   .catch((err) => console.log(err));
 
-funcNum(1, 4, 6)
-  .then((resp) => console.log(resp))
+// funcNum(1, 4, 6)
+//   .then((resp) => console.log(resp))
+//   .catch((e) => console.log(e));
+
+const numeroAleatorioA = Math.floor(Math.random() * 10 + 1);
+const numeroAleatorioB = Math.floor(Math.random() * 10 + 1);
+const numeroAleatorioC = Math.floor(Math.random() * 10 + 1);
+
+funcNum(numeroAleatorioA, numeroAleatorioB, numeroAleatorioC)
+  .then((resposta) => console.log(resposta))
   .catch((e) => console.log(e));
