@@ -25,10 +25,19 @@ const funcNum = (a, b, c) => {
 //   .then((resp) => console.log(resp))
 //   .catch((e) => console.log(e));
 
-const numeroAleatorioA = Math.floor(Math.random() * 10 + 1);
-const numeroAleatorioB = Math.floor(Math.random() * 10 + 1);
-const numeroAleatorioC = Math.floor(Math.random() * 10 + 1);
+// funcNum(numeroAleatorioA, numeroAleatorioB, numeroAleatorioC)
+//   .then((resposta) => console.log(resposta))
+//   .catch((e) => console.log(e));
 
-funcNum(numeroAleatorioA, numeroAleatorioB, numeroAleatorioC)
-  .then((resposta) => console.log(resposta))
-  .catch((e) => console.log(e));
+async function main() {
+  
+  const numeroAleatorioA = Math.floor(Math.random() * 100 + 1);
+  const numeroAleatorioB = Math.floor(Math.random() * 10 + 1);
+  const numeroAleatorioC = Math.floor(Math.random() * 100 + 1);
+  
+  const resposta = await funcNum(numeroAleatorioA, numeroAleatorioB, numeroAleatorioC)
+    .catch((e) => console.log(e));
+  
+}
+
+main();
