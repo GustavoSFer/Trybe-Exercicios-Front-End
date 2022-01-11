@@ -12,3 +12,15 @@ const funcNum = (a, b, c) => {
     resolve(resultado);
   })
 }
+
+funcNum(10, 10, 10)
+  .then((resposta) => console.log(resposta))
+  .catch((error) => console.log(error));
+
+funcNum(10, 3, 'a')
+  .then((resposta) => console.log(resposta))
+  .catch((err) => console.log(err));
+
+funcNum(1, 4, 6)
+  .then((resp) => console.log(resp))
+  .catch((e) => console.log(e));
