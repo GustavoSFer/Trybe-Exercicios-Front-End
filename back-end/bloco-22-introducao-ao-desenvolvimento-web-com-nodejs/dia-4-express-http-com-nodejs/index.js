@@ -2,9 +2,12 @@ const express = require('express');
 
 const app = express();
 app.get('/ping', (req, res) => {
-  res.status(200).send({ message: 'pong' });
+  res.status(200).json({ message: 'pong' });
 })
 
+app.post('/hello', (req, res) => {
+  res.status(200).json({ "name": "Gustavo" });
+})
 app.listen(3001, () => {
   console.log('app rodando na porta 3001');
 });
