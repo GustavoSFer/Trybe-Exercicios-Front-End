@@ -21,8 +21,17 @@ const bookId = async(id) => {
   return book;
 }
 
+const create = async (title, author_id) => {
+  const query = 'INSERT INTO (title, author_id) VALUES (? ,?)';
+  const idAuthor = connection.execute('SELECT author_id FROM model_example.books;');
+  if (title.length < 2 || !title) return false;
+  // if(!author_id || author_id ) 
+  return console.log(idAuthor);
+}
+
 module.exports = {
   getAllBooks,
   getByAuthorId,
   bookId,
+  create,
 }
