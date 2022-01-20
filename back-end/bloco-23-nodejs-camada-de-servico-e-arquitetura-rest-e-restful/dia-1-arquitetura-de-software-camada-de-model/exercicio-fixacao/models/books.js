@@ -21,12 +21,23 @@ const bookId = async(id) => {
   return book;
 }
 
+const isValid = async (title, author_id) => {
+  if (!title || typeof title !== 'string' || title.length < 3) return false;
+  if (!author_id || typeof author_id !== 'number' ) return false;
+
+  return true;
+};
+
 const create = async (title, author_id) => {
-  const query = 'INSERT INTO (title, author_id) VALUES (? ,?)';
-  const idAuthor = connection.execute('SELECT author_id FROM model_example.books;');
-  if (title.length < 2 || !title) return false;
-  // if(!author_id || author_id ) 
-  return console.log(idAuthor);
+  connection.execute(
+    'INSERT INTO model_example.books (title, author_id) VALUES (?,?)', [title, author_id]);
+  // const [idAuthor] = await connection.execute('SELECT author_id FROM model_example.books;');
+  // if (title.length < 2 || !title) return false;
+  // for (let i = 0; i < idAuthor.length; i += 1) {
+  //   console.log(idAuthor[i]);
+  //   if(!author_id || typeof author_id !== 'number' || author_id !== idAuthor[i]) return false;
+  // }
+  // return true;
 }
 
 module.exports = {
@@ -34,4 +45,5 @@ module.exports = {
   getByAuthorId,
   bookId,
   create,
+  isValid,
 }

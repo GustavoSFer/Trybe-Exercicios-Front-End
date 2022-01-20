@@ -1,18 +1,21 @@
 const express = require('express');
-const { getAllBooks, getByAuthorId, bookId, create } = require('./models/books')
+const { getAllBooks, getByAuthorId, bookId, create, isValid } = require('./models/books')
 const app = express();
 
-// app.get('/books', async (req, res) => {
-//   const books = await getAllBooks();
-//   res.status(200).json(books);
-// });
+app.use(express.json())
 
-// app.get('/books', async (req, res) => {
-//   const { id } = req.query;
-//   const booksAuthor = await getByAuthorId(id);
+app.get('/books', async (req, res) => {
+  const books = await getAllBooks();
+  res.status(200).json(books);
+});
 
-//   res.status(200).json(booksAuthor);
-// });
+app.get('/books', async (req, res) => {
+  const { id } = req.query;
+  const booksAuthor = await getByAuthorId(id);
+
+  res.status(200).json(booksAuthor);
+});
+
 
 app.get('/books/:id', async (req, res) => {
   const { id } = req.params;
@@ -23,9 +26,15 @@ app.get('/books/:id', async (req, res) => {
   res.status(200).json(retorno);
 });
 
-app.post('/books', (req, res) => {
-  console.log(req.body);
-  // const teste = create(title, author_id);
+app.post('/books', async (req, res) => {
+  const { title, author_id } = req.body;
+
+  if(!await isValid(title, author_id)) return res.status(400).json({ message: 'Dados invalido '});
+  
+  await create(title, author_id);
+
+  return res.status(201).json({ message: 'Cadastrado com sucesso' });
 })
+
 
 app.listen(3000, () => console.log('Rodando na posta 3000'));
