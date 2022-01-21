@@ -1,4 +1,5 @@
 const connection = require('../connection/connection');
+const { updateUser } = require('../controller/userControlle');
 
 const createUser = async (firstName, lastName, email, password) => {
   
@@ -23,8 +24,17 @@ const userById = async (id) => {
   return userId;
 }
 
+const userUpdate = async (firstName, lastName, email, password, id) => {
+  const query = 'UPDATE users_crud.users SET first_name = ?, last_name = ?, email = ?, password = ? WHERE id = ?;';
+
+  const updadefeito = await connection.execute(query, [firstName, lastName, email, password, id]);
+
+  return updadefeito;
+}
+
 module.exports = {
   createUser,
   listUsers,
   userById,
+  userUpdate,
 }

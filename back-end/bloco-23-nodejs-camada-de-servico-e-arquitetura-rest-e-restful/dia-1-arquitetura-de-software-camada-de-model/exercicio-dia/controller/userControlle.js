@@ -1,4 +1,4 @@
-const { createUser, listUsers, userById } = require('../Model/user_crud');
+const { createUser, listUsers, userById, userUpdate } = require('../Model/user_crud');
 
 const verificacao = (firstName, lastName, email, password) => {
 
@@ -45,9 +45,25 @@ const user = async (req, res) => {
   return res.status(200).json(queryById);
  }
 
+ const updateUser = async (req, res) => {
+  const { id } = req.params;
+  const { firstName, lastName, email, password } = req.body;
+
+  const [user] = await userById(id);
+  if(user.length === 0) return res.status(200).json({ message: 'usuario nao encontrado!' });
+ 
+  const verif = verificacao(firstName, lastName, email, password);
+  
+  if(verif) return res.status(400).json( verif.message );
+
+  await userUpdate(firstName, lastName, email, password, id);
+
+  return res.status(201).json({firstName, lastName, email, password});
+};
 
  module.exports = {
    user,
    getListUser,
    getUserById,
+   updateUser,
  }
