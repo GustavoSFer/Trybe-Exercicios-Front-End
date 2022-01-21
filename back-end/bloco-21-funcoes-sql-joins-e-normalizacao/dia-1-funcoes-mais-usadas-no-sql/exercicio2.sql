@@ -1,0 +1,1 @@
+SELECT MAS(salary) -  MIN(salary) FROM hr.employees;
