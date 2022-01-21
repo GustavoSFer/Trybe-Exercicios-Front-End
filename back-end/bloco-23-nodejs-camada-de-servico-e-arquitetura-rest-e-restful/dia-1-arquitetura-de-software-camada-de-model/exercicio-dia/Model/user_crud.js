@@ -15,7 +15,16 @@ const listUsers = async () => {
   return listUsers;
 }
 
+const userById = async (id) => {
+  const query = 'SELECT * FROM users_crud.users WHERE id = ?';
+
+  const userId = await connection.execute(query, [id]);
+  
+  return userId;
+}
+
 module.exports = {
   createUser,
   listUsers,
+  userById,
 }
