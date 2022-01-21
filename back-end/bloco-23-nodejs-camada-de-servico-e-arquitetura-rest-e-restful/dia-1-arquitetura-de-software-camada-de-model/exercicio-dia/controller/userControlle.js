@@ -1,3 +1,5 @@
+const { createUser } = require('../Model/user_crud');
+
 const verificacao = (firstName, lastName, email, password) => {
 
   if (!firstName) return { "error": true, message: 'O firstName é obrigatório' };
@@ -13,14 +15,29 @@ return false;
 
 const user = async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
+  console.log(req.body);
   
-  const verif = await verificacao(firstName, lastName, email, password);
+  const verif = verificacao(firstName, lastName, email, password);
 
   console.log(verif);
+  console.log('!false', !verif)
   if(verif) return res.status(400).json( verif.message );
-  if (!verif) return res.status(201).json({firstName, lastName, email, password});
+  if (!verif) {
+    console.log('entramos aquiiiiiiii')
+    await createUser(firstName, lastName, email, password);
+    return res.status(201).json({firstName, lastName, email, password});
+  }
  }
+
+ const getUser = (req, res) => {
+   const { firstName, lastName, email, password } = req.body;
+
+   
+  console.log(req.body);
+ }
+
 
  module.exports = {
    user,
+   getUser,
  }
