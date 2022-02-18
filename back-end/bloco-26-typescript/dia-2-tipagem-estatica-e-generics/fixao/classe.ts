@@ -53,5 +53,5 @@ class Casa {
   }
 }
 
-const casa1 = new Casa("Preto", 145)
+const casa1 = new Casa("Preto", 145);
 casa1.infor();
