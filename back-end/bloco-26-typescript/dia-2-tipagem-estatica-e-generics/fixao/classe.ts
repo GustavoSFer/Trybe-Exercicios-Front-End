@@ -37,3 +37,21 @@ const dog1 = new Dog("Slinky", racaDog.viraLata, 26);
 
 console.log(dog1.getName());
 dog1.info();
+
+// =========================
+
+class Casa {
+  cor: string;
+  tamanho: number
+  constructor(cor: string, tamanho: number) {
+    this.cor = cor;
+    this.tamanho = tamanho;
+  }
+
+  infor() {
+    console.log(`A cor da casa é: ${this.cor} e seu tamanho ${this.tamanho} m2`);
+  }
+}
+
+const casa1 = new Casa("Preto", 145)
+casa1.infor();
