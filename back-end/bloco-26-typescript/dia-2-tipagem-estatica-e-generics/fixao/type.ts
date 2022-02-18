@@ -24,3 +24,11 @@ function soma(s: num) {
 }
 
 console.log(soma({ x: 2, y: 10 }));
+
+// ====================
+
+type endereco = {
+  rua: string,
+  numero: number,
+  cidade: string
+}
