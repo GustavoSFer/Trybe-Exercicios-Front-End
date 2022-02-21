@@ -1,17 +1,16 @@
 enum mesesAno {
-  Janeiro="Janeiro",
-  fevereiro="fevereiro",
-  março="março",
-  abril="abril",
-  maio="maio",
-  junho="junho",
-  julho="julho",
-  agosto="agosto",
-  setembro="setembro",
-  outubro="outubro",
-  novembro="novembro",
-  dezembro="dezembro",
+  JANEIRO = "Janeiro",
+  FEVEREIRO = "Fevereiro",
+  MARCO = "Março",
+  ABRIL = "Abril",
+  MAIO = "Maio",
+  JUNHO = "Junho",
+  JULHO = "Julho",
+  AGOSTO = "Agosto",
+  SETEMBRO = "Setembro",
+  OUTUBRO = "Outubro",
+  NOVEMBRO = "Novembro",
+  DEZEMBRO = "Dezembro",
 }
-
 
 export default mesesAno;

@@ -1,8 +1,9 @@
+
 enum estacaoClimatica {
-  Outono="Outono",
-  Inverno="Inverno",
-  Primavera="Primavera",
-  Verao="Verao",
+  OUTONO = "Outono",
+  INVERNO = "Inverno",
+  PRIMAVERA = "Primavera",
+  VERAO = "Verão",
 }
 
 export default estacaoClimatica;
