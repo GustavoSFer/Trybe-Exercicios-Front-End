@@ -19,3 +19,6 @@ class Tv {
 
 const tv1 = new Tv('Sansung', 50, '4k', ['HDMI', 'Ethernet']);
 tv1.trunOn();
+
+// 4 - indexOf; console.log; push; toLowerCase....
+
