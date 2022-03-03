@@ -1,9 +1,9 @@
 class Tv {
-  brand: string;
-  size: number;
-  resolution: string;
-  connections: string[];
-  // connectedTo: string;
+  private brand: string;
+  private size: number;
+  private resolution: string;
+  private connections: string[];
+  private connectedTo: string;
 
   constructor(b: string, s: number, r: string, c: string[]) {
     this.brand = b;
@@ -14,6 +14,18 @@ class Tv {
 
   trunOn() {
     return `Marca: ${this.brand}, Tamanha: ${this.size}, Resolução: ${this.resolution}, Entradas: ${this.connections}, `;
+  }
+
+  getConnectedTo() {
+    return this.connectedTo;
+  }
+
+  setConnectedTo(connect: string) {
+    if (this.connections.includes(connect)) {
+      this.connectedTo = connect
+    } else {
+      console.log('Sorry, connection unavailabel');
+    }
   }
 }
 
