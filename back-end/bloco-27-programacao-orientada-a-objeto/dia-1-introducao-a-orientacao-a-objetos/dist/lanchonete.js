@@ -19,7 +19,9 @@ class Pedido {
     }
     totalPedido() {
         const total = this.item.reduce((prev, item) => prev + item.preco, 0);
-        return total;
+        const desconto = this.porcentual * total;
+        console.log(desconto);
+        return total - desconto;
     }
 }
 const cliente1 = new Cliente("Gustavo");
