@@ -16,11 +16,11 @@ class Tv {
     return `Marca: ${this.brand}, Tamanha: ${this.size}, Resolução: ${this.resolution}, Entradas: ${this.connections}, `;
   }
 
-  getConnectedTo() {
+  get ConnectedTo() {
     return this.connectedTo;
   }
 
-  setConnectedTo(connect: string) {
+  set ConnectedTo(connect: string) {
     if (this.connections.includes(connect)) {
       this.connectedTo = connect
     } else {
@@ -34,3 +34,5 @@ tv1.trunOn();
 
 // 4 - indexOf; console.log; push; toLowerCase....
 
+tv1.ConnectedTo = 'Wi-fi';
+console.log('Connection:', tv1.ConnectedTo)
