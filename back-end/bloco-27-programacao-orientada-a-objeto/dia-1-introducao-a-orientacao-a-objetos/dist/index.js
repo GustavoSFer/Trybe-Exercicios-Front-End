@@ -8,9 +8,7 @@ class Students {
     }
     somaNota() {
         const somaProva = this.prova.reduce((prev, nota) => prev + nota, 0);
-        console.log(somaProva);
         const somaTrabalho = this.trabalho.reduce((prev, nota) => prev + nota, 0);
-        console.log(somaTrabalho);
         return somaProva + somaTrabalho;
     }
 }
