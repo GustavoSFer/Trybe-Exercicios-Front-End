@@ -5,22 +5,18 @@ class Superclass {
     this.isSuper = isSuper;
   }
 
-  protected sayHello() {
+  public sayHello() {
     console.log("Olá Mundo!")
   }
 }
 
-class Subclass extends Superclass {
-  sayHello2() {
-    this.sayHello();
-  }
-}
+class Subclass extends Superclass { }
 
 // const myFunc = (obj: Superclass) => {
 //   obj.sayHello();
 // }
 
-const myFunc = (obj: Subclass) => {
+const myFunc = (obj: Superclass) => {
   obj.sayHello();
 }
 
