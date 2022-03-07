@@ -15,3 +15,15 @@ class MeleeCharacter extends Character {
     console.log(`Movimento especial ${this.specialMoveName}`);
   }
 }
+
+class LongRangerCharacter extends Character {
+  constructor(private name: string, private specialMoveName: string) {
+    super();
+  }
+  talk(): void {
+   console.log(`Olá, eu sou ${this.name}, eu ataco de perto.`);   
+  }
+  specialMove(): void {
+    console.log(`Movimento especial ${this.specialMoveName}`);
+  }
+}
