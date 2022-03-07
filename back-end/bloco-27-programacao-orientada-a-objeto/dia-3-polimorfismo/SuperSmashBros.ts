@@ -32,3 +32,9 @@ function myFunc(character: Character) {
   character.talk()
   character.specialMove();
 }
+
+const person1 = new MeleeCharacter('Bulbu Salro', 'Ataque de Água a distancia');
+const person2 = new LongRangerCharacter('Dragon Skuir', 'Milk de Ataques ao Lungs');
+
+myFunc(person1);
+myFunc(person2);
