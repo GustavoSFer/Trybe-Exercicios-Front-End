@@ -27,3 +27,8 @@ class LongRangerCharacter extends Character {
     console.log(`Movimento especial ${this.specialMoveName}`);
   }
 }
+
+function myFunc(character: Character) {
+  character.talk()
+  character.specialMove();
+}
