@@ -1,0 +1,20 @@
+{
+  "name": "fixao",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build && node ./dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/node14": "^1.0.1",
+    "@types/node": "^17.0.21"
+  },
+  "dependencies": {
+    "typescript": "^4.6.2"
+  }
+}
