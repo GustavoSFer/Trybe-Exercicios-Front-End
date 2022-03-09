@@ -34,4 +34,13 @@ app.post('/plant/:id', async (req, res) => {
   res.status(201).json(response);
 });
 
+app.post('/plant', async (req, res) => {
+  const { breed, needsSun, origin, size } = req.body;
+  const id = Math.floor(Date.now() * Math.random()).toString(36);
+
+  const response = await plants.savePlant({ id, breed, needsSun, origin, size });
+
+  res.status(201).json(response);
+});
+
 app.listen(PORT, () => console.log(`Rodando na posta ${PORT}`));
