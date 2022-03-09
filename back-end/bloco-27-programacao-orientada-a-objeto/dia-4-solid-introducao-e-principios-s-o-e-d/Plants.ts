@@ -42,8 +42,7 @@ class Plants {
   }
 
   async getPlantById(id: string) {
-    const plantsRaw = await fs.readFile(plantsJson, { encoding: 'utf8' });
-    const plants: IPlant[] = JSON.parse(plantsRaw);
+    const plants = await this.getPlants();
 
     const plantById = plants.find((plant) => plant.id === id);
     if (!plantById) return null;
