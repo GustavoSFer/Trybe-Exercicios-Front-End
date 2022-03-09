@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "dev": "nodemon --watch \"./src/**\" \"ts,js\" --ignore \"src/**/*.spec.ts,src/**/*.json\" --exec \"ts-node index.ts\"",
     "start": "ts-node index.ts",
     "lint": "eslint . --ext .ts"
   },
@@ -28,6 +29,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "eslint-config-trybe-backend": "^1.0.4",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15"
   }
 }
