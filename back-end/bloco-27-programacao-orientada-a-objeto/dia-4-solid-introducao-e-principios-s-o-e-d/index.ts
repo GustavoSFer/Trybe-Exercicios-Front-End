@@ -43,4 +43,12 @@ app.post('/plant', async (req, res) => {
   res.status(201).json(response);
 });
 
+app.get('/sunny/:id', async (req, res) => {
+  const { id } = req.params;
+
+  const response = await plants.getPlantsThatNeedsSunWithId(id);
+
+  res.status(200).json(response);
+});
+
 app.listen(PORT, () => console.log(`Rodando na posta ${PORT}`));
