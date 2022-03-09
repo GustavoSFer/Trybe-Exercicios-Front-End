@@ -50,12 +50,12 @@ class Plants {
   }
 
   async removePlantById(id: string) {
-    const plantsRaw = await fs.readFile(plantsJson, { encoding: 'utf8' });
-    const plants: IPlant[] = JSON.parse(plantsRaw);
+   const plants = await this.getPlants();
 
     const removedPlant = plants.find((plant) => plant.id === id);
     if (!removedPlant) return null;
 
+    // Se não for encontrado o id informado, ele grava no BD.
     const newPlants = plants.filter((plant) => plant.id !== id);
     await fs.writeFile(plantsJson, JSON.stringify(newPlants));
 
@@ -63,8 +63,7 @@ class Plants {
   }
 
   async getPlantsThatNeedsSunWithId(id: string) {
-    const plantsRaw = await fs.readFile(plantsJson, { encoding: 'utf8' });
-    const plants: IPlant[] = JSON.parse(plantsRaw);
+    const plants = await this.getPlants();
 
     const filteredPlants = plants.filter((plant) => {
       if (plant.needsSun && plant.id === id) {
