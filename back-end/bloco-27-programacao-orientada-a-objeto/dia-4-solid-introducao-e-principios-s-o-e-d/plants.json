@@ -1,0 +1,36 @@
+[
+  {
+    "id": "16372398-b28f-4a39-8e67-3f6a035ee076",
+    "breed": "teste",
+    "needsSun": true,
+    "origin": "guilberto",
+    "size": 23
+  },
+  {
+    "id": "cb9aea00-d3fa-44b0-a4b4-7bd4c1a32770",
+    "breed": "Orquidea",
+    "size": 99,
+    "needsSun": true,
+    "origin": "Brazil"
+  },
+  {
+    "id": "bt1uiea",
+    "breed": "teste",
+    "needsSun": true,
+    "origin": "guilberto",
+    "specialCare": {
+      "waterFrequency": 24.71
+    },
+    "size": 23
+  },
+  {
+    "id": "59656l99",
+    "breed": "testdsae",
+    "needsSun": false,
+    "origin": "guildsaberto",
+    "specialCare": {
+      "waterFrequency": 22.295
+    },
+    "size": 23
+  }
+]
