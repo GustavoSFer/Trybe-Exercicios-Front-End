@@ -1,0 +1,5 @@
+comandos:
+
+db.bios.find({_id: 8});
+db.bios.find({ _id: 8}, {name: true});
+db.bios.find({_id: 8}, {name: true, birth: 1});
