@@ -1,0 +1,4 @@
+use('movies');
+
+// Conte quantos livros existem com o status = "PUBLISH"
+db.book.find({ status: 'PUBLISH' }).count();
