@@ -1,0 +1,4 @@
+use('movies');
+
+// Retorne a quantidade de documentos da coleção books
+db.book.find();
