@@ -1,0 +1,5 @@
+// Retorne apenas os atributos name e birth do documento com o _id igual a 8.
+
+use('bios');
+
+db.bios.find({ _id: 8 }, { birth: 1, _id: 0 })
