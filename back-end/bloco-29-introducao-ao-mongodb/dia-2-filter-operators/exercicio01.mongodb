@@ -3,4 +3,4 @@ use('class');
 // Inspecione um documento para que você se familiarize com a estrutura. Entenda os atributos e os níveis existentes.
 db.superheroes.find();
 db.superheroes.find({},{ name: 1, aspects: 1 });
-db.superheroes.find({ name: 'Abomination' });
+db.superheroes.findOne({ name: 'Abomination' });
