@@ -1,0 +1,4 @@
+use('class');
+
+// Selecione todos os super-heróis que têm olhos verdes.
+db.superheroes.find({ 'aspects.eyeColor': 'green' })
