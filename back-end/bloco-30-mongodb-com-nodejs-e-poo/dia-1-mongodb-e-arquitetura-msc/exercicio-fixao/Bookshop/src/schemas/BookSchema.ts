@@ -1,0 +1,15 @@
+import { Schema } from 'mongoose';
+
+export interface IBook {
+  title: string;
+  author: string;
+  publishedYear: number;
+  weight?: SVGStringList;
+};
+
+export const BookSchema = new Schema<IBook>({
+  title: { type: String, required: true },
+  author: { type: String, required: true },
+  publishedYear: { type: Number, required: false },
+  weight: { type: Number, required: false },
+});

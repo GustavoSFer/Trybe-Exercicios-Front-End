@@ -1,0 +1,17 @@
+import { model as createModel } from 'mongoose';
+import { BookSchema, IBook } from '../schemas/BookSchema';
+
+class BookModel {
+  constructor( private bookModel = createModel<IBook>('book', BookSchema)) {}
+
+  public async getBooks(): Promise<IBook[]> {
+    const books = await this.bookModel.find();
+    return books;
+  }
+
+  public async getById(id: string): Promise<IBook | null> {
+    const book = await this.bookModel.findById(id); // ou
+    // const book = await this.bookModel.findOne({ _id: id });
+    return book;
+  }
+}
