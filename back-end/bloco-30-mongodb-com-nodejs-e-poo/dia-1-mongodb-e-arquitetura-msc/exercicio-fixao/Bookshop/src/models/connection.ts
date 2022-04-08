@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const connection = (mongoDatabaseURI = 'mongo://localhost:/model_example') => 
+const connection = (mongoDatabaseURI = 'mongodb://localhost:/model_example') => 
 mongoose.connect(mongoDatabaseURI);
 
 export default connection;

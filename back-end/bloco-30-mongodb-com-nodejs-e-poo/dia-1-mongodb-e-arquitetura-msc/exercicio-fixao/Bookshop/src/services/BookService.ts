@@ -21,15 +21,15 @@
       return data;
     }
 
-    public async updateBook(id: string, bookData: object): Promise<IBook | null> {
-      const data = await this.bookModel.editBook(id, bookData);
-      return data;
-    }
+    // public async updateBook(id: string, bookData: object): Promise<IBook | null> {
+    //   const data = await this.bookModel.editBook(id, bookData);
+    //   return data;
+    // }
 
-    public async deleteBook(id: string): Promise<IBook | null> {
-      const data = await this.bookModel.deleteBook(id);
-      return data;
-    }
+    // public async deleteBook(id: string): Promise<IBook | null> {
+    //   const data = await this.bookModel.deleteBook(id);
+    //   return data;
+    // }
   }
 
   export default BookService;

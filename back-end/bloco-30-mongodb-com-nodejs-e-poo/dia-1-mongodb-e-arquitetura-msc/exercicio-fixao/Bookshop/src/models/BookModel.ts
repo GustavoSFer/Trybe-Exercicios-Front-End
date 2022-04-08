@@ -9,9 +9,16 @@ class BookModel {
     return books;
   }
 
-  public async getById(id: string): Promise<IBook | null> {
+  public async createBook(bookData: object): Promise<IBook> {
+    const book = await this.bookModel.create(bookData);
+    return book;
+  }
+
+  public async getBook(id: string): Promise<IBook | null> {
     const book = await this.bookModel.findById(id); // ou
     // const book = await this.bookModel.findOne({ _id: id });
     return book;
   }
 }
+
+export default BookModel;
