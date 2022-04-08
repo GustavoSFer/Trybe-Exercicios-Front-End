@@ -26,10 +26,10 @@
       return data;
     }
 
-    // public async deleteBook(id: string): Promise<IBook | null> {
-    //   const data = await this.bookModel.deleteBook(id);
-    //   return data;
-    // }
+    public async deleteBook(id: string): Promise<IBook | null> {
+      const data = await this.bookModel.deleteBook(id);
+      return data;
+    }
   }
 
   export default BookService;
