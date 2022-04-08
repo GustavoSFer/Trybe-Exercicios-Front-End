@@ -12,4 +12,4 @@ export const BookSchema = new Schema<IBook>({
   author: { type: String, required: true },
   publishedYear: { type: Number, required: false },
   weight: { type: Number, required: false },
-});
+},);

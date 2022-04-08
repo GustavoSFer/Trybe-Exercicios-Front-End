@@ -22,7 +22,7 @@ class BookModel {
 
   public async editBook(id: string, bookData: object): Promise<IBook | null> {
     const book = await this.bookModel.findByIdAndUpdate({ id }, { ...bookData});  // ou
-    // const book = await this.bookModel.findOneAndUpdate({ _id: id }, { ...bookData });
+    // const book = await this.bookModel.findOneAndUpdate({ _id: id }, { ...bookData }, { new: true });
     return book;
   }
 
