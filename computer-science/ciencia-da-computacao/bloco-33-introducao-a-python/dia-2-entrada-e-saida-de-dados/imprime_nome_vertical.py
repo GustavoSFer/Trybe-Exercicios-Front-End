@@ -4,4 +4,5 @@ def nome_vertical(nome):
   for index in nome:
     print(index)
 
-nome_vertical("Gustavo")
+nome = input("Digite seu nome: ")
+nome_vertical(nome)
