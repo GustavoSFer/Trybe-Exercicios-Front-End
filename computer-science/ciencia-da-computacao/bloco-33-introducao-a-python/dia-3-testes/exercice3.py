@@ -13,8 +13,10 @@ def check_email(email):
   if email[0].isalpha():
     if (re.search(regex, email)):
       print('Email valido')
+      return True
     else:
       print("Email invalidoo!")
+      return False
   else:
     print('O nome de usuário deve iniciar com uma letra')
 
