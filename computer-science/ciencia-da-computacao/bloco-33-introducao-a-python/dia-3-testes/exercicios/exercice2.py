@@ -33,4 +33,4 @@ def number_phone(frase):
   print(num)
 
 
-number_phone('1-HOME-SWEET-HOME')
+number_phone('ABC')
