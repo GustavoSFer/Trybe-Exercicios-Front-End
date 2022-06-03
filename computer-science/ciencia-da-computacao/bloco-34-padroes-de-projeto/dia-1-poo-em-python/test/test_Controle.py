@@ -28,3 +28,10 @@ def test_modificar_canal():
   canal = tv.get_canal()
 
   assert canal == 5
+
+def test_ligar_desligar_tv():
+  tv = Tv(32)
+  tv.ligar_desligar()
+  ligarAndDesligar = tv.get_ligar_and_desligar()
+
+  assert ligarAndDesligar == True

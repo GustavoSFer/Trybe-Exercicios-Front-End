@@ -25,9 +25,19 @@ class Tv():
     if canal <= 99 and canal >= 1:
       self._canal = canal
 
+  
+  def ligar_desligar(self):
+    if self._ligada:
+      self._ligada = False
+    else:
+      self._ligada = True
+
 
   def get_volume(self):
     return self._volume
 
   def get_canal(self):
     return self._canal
+
+  def get_ligar_and_desligar(self):
+    return self._ligada
