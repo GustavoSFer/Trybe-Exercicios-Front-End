@@ -13,3 +13,10 @@ def test_aumentar_volume():
   volume = tv.get_volume()
 
   assert volume == 51
+
+def test_diminuir_volume():
+  tv = Tv(65)
+  tv.diminuir_volume()
+  volume = tv.get_volume()
+
+  assert volume == 49
