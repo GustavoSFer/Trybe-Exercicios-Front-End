@@ -20,3 +20,11 @@ def test_diminuir_volume():
   volume = tv.get_volume()
 
   assert volume == 49
+
+
+def test_modificar_canal():
+  tv = Tv(32)
+  tv.modificar_canal(5)
+  canal = tv.get_canal()
+
+  assert canal == 5

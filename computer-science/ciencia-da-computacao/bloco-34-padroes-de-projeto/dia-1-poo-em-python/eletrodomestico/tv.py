@@ -20,5 +20,14 @@ class Tv():
     except ValueError():
       print('Não pode ser alterado o volume')
 
+
+  def modificar_canal(self, canal):
+    if canal <= 99 and canal >= 1:
+      self._canal = canal
+
+
   def get_volume(self):
     return self._volume
+
+  def get_canal(self):
+    return self._canal
