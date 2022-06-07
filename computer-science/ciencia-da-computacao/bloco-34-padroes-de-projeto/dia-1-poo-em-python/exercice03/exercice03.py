@@ -48,3 +48,8 @@ class Circulo(FiguraGeometrica):
 
   def perimetro(self):
     return 2 * pi * self.raio
+
+
+circulo = Circulo(5)
+print(circulo.area())
+print(circulo.perimetro())
