@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from math import pi
 
 # ==== CLASSE ABSTRATA ====
 class FiguraGeometrica(ABC):
@@ -35,3 +36,15 @@ class Retangulo(FiguraGeometrica):
 
   def perimetro(self):
     return 2 * (self.base + self.altura)
+
+
+#  ==== CRIANDO A CLASSE CIRCULO ====
+class Circulo(FiguraGeometrica):
+  def __init__(self, raio):
+    self.raio = raio
+
+  def area(self):
+    return pi * (self.raio * self.raio)
+
+  def perimetro(self):
+    return 2 * pi * self.raio
